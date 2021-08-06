@@ -1,18 +1,24 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `Peralta Media`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Carlos Peralta`,
+      summary: `I keep my creative process alive by writting about it.`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
+    description: `The sum of thoughts and ideas.`,
+    siteUrl: `https://peralta.media/`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `https://twitter.com/ceperalta`,
+      linkedIn: `https://www.linkedin.com/in/carlos-e-peralta/`
     },
   },
   plugins: [
     `gatsby-plugin-image`,
+    { resolve: `gatsby-plugin-theme-ui`,
+      options: {
+        preset: `@theme-ui/preset-future`
+      }
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -112,13 +118,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Peralta Media Site`,
+        short_name: `Peralta Media`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/android-chrome-512x512.png`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-react-helmet`,
