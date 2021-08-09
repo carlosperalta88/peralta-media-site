@@ -4,7 +4,6 @@ import { Link } from 'gatsby'
 import { Themed } from 'theme-ui'
 
 const PostsList = ({ posts }) => {
-  console.log(posts)
   return (
     <ul
       sx={{

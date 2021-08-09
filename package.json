@@ -13,6 +13,7 @@
     "gatsby-plugin-feed": "^3.10.0",
     "gatsby-plugin-gatsby-cloud": "^2.10.1",
     "gatsby-plugin-google-analytics": "^3.10.0",
+    "gatsby-plugin-google-gtag": "^3.11.0",
     "gatsby-plugin-image": "^1.10.1",
     "gatsby-plugin-manifest": "^3.10.0",
     "gatsby-plugin-offline": "^4.10.0",
@@ -36,6 +37,7 @@
     "typeface-montserrat": "0.0.75"
   },
   "devDependencies": {
+    "dotenv": "^8.6.0",
     "prettier": "2.3.2"
   },
   "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
@@ -49,8 +51,8 @@
     "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
   },
   "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
+    "build": "STAGING=true gatsby build",
+    "develop": "STAGING=true gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",

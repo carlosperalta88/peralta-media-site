@@ -1,3 +1,9 @@
+if (process.env.STAGING) {
+  require("dotenv").config({
+    path: `.env`,
+  })
+}
+
 module.exports = {
   siteMetadata: {
     title: `Peralta Media`,
@@ -57,12 +63,17 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    // {
-    //   resolve: `gatsby-plugin-google-analytics`,
-    //   options: {
-    //     trackingId: `ADD YOUR TRACKING ID HERE`,
-    //   },
-    // },
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: [process.env.ANALYTICS_ID],
+        gtagConfig: {
+          optimize_id: process.env.GTAG,
+          anonymize_ip: true,
+          cookie_expires: 0,
+        },
+      },
+    },
     {
       resolve: `gatsby-plugin-feed`,
       options: {
