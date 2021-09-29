@@ -9,7 +9,7 @@ module.exports = {
     title: `Peralta Media`,
     author: {
       name: `Carlos Peralta`,
-      summary: `I keep my creative process alive by writting about it.`,
+      summary: `I write about my creative process, among other things.`,
     },
     description: `The sum of thoughts and ideas.`,
     siteUrl: `https://peralta.media/`,
@@ -19,12 +19,8 @@ module.exports = {
     },
   },
   plugins: [
+    `gatsby-plugin-sass`,
     `gatsby-plugin-image`,
-    { resolve: `gatsby-plugin-theme-ui`,
-      options: {
-        preset: `@theme-ui/preset-future`
-      }
-    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -63,17 +59,6 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-plugin-google-gtag`,
-      options: {
-        trackingIds: [process.env.ANALYTICS_ID],
-        gtagConfig: {
-          optimize_id: process.env.GTAG,
-          anonymize_ip: true,
-          cookie_expires: 0,
-        },
-      },
-    },
     {
       resolve: `gatsby-plugin-feed`,
       options: {
@@ -139,7 +124,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-gatsby-cloud`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

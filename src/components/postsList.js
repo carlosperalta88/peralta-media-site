@@ -1,47 +1,30 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
+import * as React from 'react'
 import { Link } from 'gatsby'
-import { Themed } from 'theme-ui'
 
 const PostsList = ({ posts }) => {
   return (
-    <ul
-      sx={{
-        listStyle: 'none',
-        display: 'grid',
-        gridGap: 3,
-        gridTemplateColumns: 'repeat(auto-fit, minmax(256px, 1fr))',
-        m: 0,
-        px: 3,
-        py: 4,
-      }}>
+    <ul className="article-list">
       {posts.map((post, index) => (
-        <li key={`${index}${post.fields.slug}`} sx={{}}>
+        <li key={`${index}${post.fields.slug}`}>
           <article
             className="post-list-item"
             itemScope
             itemType="http://schema.org/Article"
           >
             <header>
-              <Themed.h2
-                sx={{
-                  m: 0,
-                }}>
+              <h2>
                 <Link
                   to={post.fields.slug}
                 >
                   {post.frontmatter.title || post.fields.slug}
                 </Link>
-              </Themed.h2>
-              <small sx={{ fontFamily: 'body', fontWeight: 'bold' }}>{post.frontmatter.date}</small>
+              </h2>
+              <small>{post.frontmatter.date}</small>
             </header>
             <section>
-              <Themed.p
-                sx={{
-                  m: 0,
-                }}>
+              <p>
                 {post.frontmatter.description || post.excerpt}
-              </Themed.p>
+              </p>
             </section>
           </article>
         </li>
