@@ -1,20 +1,15 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
+import * as React from 'react'
 import Layout from '../components/layout'
 
 const Projects = ({location}) => {
   return (
     <Layout location={location} title="Peralta Media">
-      <div
-        sx={{
-          display: 'grid',
-          gridGap: 4,
-        }}>
+      <div>
         <div>
           <article>
             <header>
               <h1>
-                I Killed The Romans
+                I Killed The Romance
               </h1>
             </header>
             <section>
@@ -23,7 +18,7 @@ const Projects = ({location}) => {
                 five years. I'm starting to publish again. The challenge is to produce a track every week and publish it.
               </p>
               <a 
-                href="https://soundcloud.com/i-killed-the-romans"
+                href="https://soundcloud.com/i-killed-the-romance"
                 target="_blank"
                 rel="noreferrer"
                 >SoundCloud</a>

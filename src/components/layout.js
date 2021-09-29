@@ -1,8 +1,8 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
+import * as React from 'react'
 import Header from "./header"
 import Footer from "./footer"
 import { useStaticQuery, graphql } from "gatsby"
+import ExtraScripts from './scripts'
 
 const Layout = ({ location, title, children }) => {
   const data = useStaticQuery(graphql`
@@ -28,21 +28,17 @@ const Layout = ({ location, title, children }) => {
   const isRootPath = location.pathname === rootPath
 
   return (
-      <div
-        className="global-wrapper" 
-        data-is-root-path={isRootPath}
-        sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          minHeight: '100vh',
-          fontFamily: 'body'
-        }}>
+      <div className="global-wrapper" data-is-root-path={isRootPath}>
+        <div className="color-banner">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <ExtraScripts />
         <Header social={socialObject} author={author}/>
-        <main
-          sx={{
-            width: '100%',
-            flex: '1 1 auto',
-          }}>
+        <main>
           {children}
         </main>
         <Footer siteTitle={title}/>

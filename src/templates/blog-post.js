@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
+import * as React from 'react'
 import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
@@ -24,19 +23,12 @@ const BlogPostTemplate = ({ data, location }) => {
           <h1 
             itemProp="headline"
             >{post.frontmatter.title}</h1>
-          <p
-            sx={{
-              color: 'gray'
-            }}
-          >{post.frontmatter.date}</p>
+          <p>{post.frontmatter.date}</p>
         </header>
         <section
           dangerouslySetInnerHTML={{ __html: post.html }}
           itemProp="articleBody"
-          sx={{
-            fontFamily: 'body'
-          }}
-        />
+          />
         <hr />
       </article>
     </Layout>
