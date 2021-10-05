@@ -1,18 +1,16 @@
 @use 'sass:list';
 @use 'sass:math';
 
-$teal: #249EA0;
-$darkTeal: #008083;
-$darkestTeal: #005F60;
+$darkTeal: #155F60;
+$purple: #4B36D6;
 $darkGrey: #333333;
 $lightGrey: #C5C5C5;
-$brightOrange: #FD5901;
-$lightOrange: #F78104;
-$baseOrange: #FAAB36;
+$darkOrange: #9D3801;
+$brown: #874703;
 
-$palette: $teal, $darkTeal, $darkestTeal, $brightOrange, $lightOrange, $baseOrange;
-$primary: list.nth($palette, random($limit: 6));
-$secondary: list.nth($palette, random($limit: 6));
+$palette: $darkTeal, $purple, $darkOrange, $brown;
+$primary: list.nth($palette, random($limit: 4));
+$secondary: list.nth($palette, random($limit: 4));
 
 html {
   color: $darkGrey;
@@ -51,28 +49,28 @@ a {
 
 .global-wrapper {
   display: grid;
+  box-sizing: border-box;
   width: 100vw;
   height: 100vh;
-  grid-template-rows: [row1-start] 20px [row1-end row2-start] 120px [row2-end row3-start] auto [row3-end] 70px [last-row];
-  
-  .color-banner {
-    @for $i from 1 to list.length($palette) {
-      div:nth-child(#{$i}) {
-        &:after {
-          content: '';
-          width: math.div(100vw, 5);
-          height: 10px;
-          float: left;
-          background-color: list.nth($palette, $i);;
-        }  
-      }
-    }
+  grid-template-rows: [row1-start] 10px [row1-end row2-start] 120px [row2-end row3-start] auto [row3-end] 70px [last-row];
+
+  &:before {
+    content: '';
+    width: 100vw;
+    height: 10px;
+    display: inline-block;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#155f60+0,155f60+25,4b36d6+25,4b36d6+50,9d3801+50,874703+75,9d3801+75,874703+100 */
+    background: $darkTeal; /* Old browsers */
+    background: -moz-linear-gradient(left,  $darkTeal 0%, $darkTeal 25%, $purple 25%, $purple 50%, $darkOrange 50%, $darkOrange 75%, $brown 75%, $brown 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left,  $darkTeal 0%,$darkTeal 25%,$purple 25%,$purple 50%,$darkOrange 50%,$darkOrange 75%,$brown 75%,$brown 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right,  $darkTeal 0%,$darkTeal 25%,$purple 25%,$purple 50%,$darkOrange 50%,$darkOrange 75%,$brown 75%,$brown 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#155F60', endColorstr='#874703',GradientType=1 ); /* IE6-9 */
   }
 
   header,
   main,
   footer {
-    padding: 0 1em;
+    padding: 1em;
   }
 
   header {
@@ -85,11 +83,13 @@ a {
           margin-left: 0;
           &:not(:first-child) {
             float: left;
-            padding-right: 1em;
-
-            a:hover {
-              transition: all 0.3s cubic-bezier(0.000, 0.000, 0.230, 1);
-              color: $secondary;
+            a {
+              padding: 0.5em 1em;
+              &:hover {
+                transition: all 0.3s cubic-bezier(0.000, 0.000, 0.230, 1);
+                background-color: $primary;
+                color: $lightGrey;
+              }
             }
           }
 
@@ -102,11 +102,17 @@ a {
     .social-links {
       li {
         list-style: none;
-        padding-left: 0;
         margin-left: 0;
         float: left;
-        padding-right: 1em;
         text-transform: capitalize;
+        a {
+          padding: 0.5em 1em;
+          &:hover {
+            transition: all 0.3s cubic-bezier(0.000, 0.000, 0.230, 1);
+            background-color: $primary;
+            color: $lightGrey;
+          }
+        }
       }
     }
   }
@@ -158,6 +164,8 @@ a {
 
     .site {
       float: right;
+      width: 200px;
+      margin-top: 0px;
     }
   }
 }
