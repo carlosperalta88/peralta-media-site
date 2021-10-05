@@ -5,6 +5,7 @@ const Footer = ({ siteTitle }) => {
   const menu = [
     {name: 'Home', to: '/'},
     {name: 'Projects', to: '/projects'},
+    {name: 'About Me', to: '/about'},
   ]
   return (
     <footer>
@@ -20,7 +21,7 @@ const Footer = ({ siteTitle }) => {
           )
         })}
       </ul>
-      <div className="site">© 2021 {siteTitle}</div>
+      <p className="site">© 2021 {siteTitle}</p>
     </footer>
   )
 }
