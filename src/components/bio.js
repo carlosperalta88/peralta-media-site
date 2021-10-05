@@ -3,7 +3,7 @@ import * as React from 'react';
 const Bio = () => {
   return (
     <div className="bio">
-      <p>I keep my creative process alive by writting about it.</p> 
+      <p>I write about my creative process, among other things.</p> 
     </div>
   )
 }
