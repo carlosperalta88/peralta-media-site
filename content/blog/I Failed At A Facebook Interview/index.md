@@ -1,5 +1,5 @@
 ---
-title: I failed at a Facebook screening interview
+title: I failed at a Facebook screening
 date: 2021-09-26
 description: Thoughts about failing at a FAANG interview
 slug: /blog/i-failed-at-a-facebook-screening-interview
