@@ -107,6 +107,7 @@ module.exports = {
               }
             `,
             output: "/rss.xml",
+            title: "Peralta Media"
           },
         ],
       },
