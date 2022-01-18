@@ -1,6 +1,5 @@
 import * as React from 'react';
 import CanvasLayout from '../../components/canvas-layout';
-import Box from '../../components/three-components/box';
 import Line from '../../components/three-components/line';
 import { OrbitControls } from '@react-three/drei';
 
@@ -26,7 +25,7 @@ const ThreeTest = ({ location }) => {
             <directionalLight color="white" position={[0, 0, 15]} />
 
             {opts.map((el) => <Line key={el.key} color={'red'} lineWidth={el.lineWidth} start={el.start} end={el.end} />)}            
-            
+
         </CanvasLayout>
     )
 }

@@ -4,8 +4,6 @@ import { useFrame } from "@react-three/fiber";
 
 const Line = ({ start, end, color, lineWidth }) => {
     const ref = useRef();
-    // console.log(props)
-    // const { start, end, color, lineWidth } = props
 
     useLayoutEffect(() => {
         ref.current.geometry.setFromPoints([start, end].map((point) => new THREE.Vector3(...point)))
