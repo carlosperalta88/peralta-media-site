@@ -1,5 +1,4 @@
 import * as React from 'react';
-import * as THREE from 'three';
 import { useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
 import { Plane } from '@react-three/drei';
